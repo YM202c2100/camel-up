@@ -5,6 +5,8 @@ import { rollDice } from "../libs/rollDice"
 
 export const RollAction:React.FC<{setRollResult:Dispatch<SetStateAction<RollResult|undefined>>}> = ({setRollResult})=>{
   const [remainingCamels, setRemainingCamels] = useState<CamelColor[]>([...camelColors])
+  const rollLimit = 5
+
   return(
     <div>
       <button 
@@ -17,12 +19,13 @@ export const RollAction:React.FC<{setRollResult:Dispatch<SetStateAction<RollResu
   )
 
   function advanceRace(){
-    if(remainingCamels.length !== 0){
+    const canRoll = (camelColors.length - remainingCamels.length < rollLimit)
+    if(canRoll){
       const camelResult:CamelColor = getRandomCamel(remainingCamels)
       const diceResult:DiceValues = rollDice()
 
       updateRemainingCamels(camelResult)
-      
+
       setRollResult({camel:camelResult, dice:diceResult})
     }
   }
