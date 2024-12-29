@@ -29,7 +29,7 @@ export const CamelIcon:React.FC<{camelColor:CamelColor}> = ({camelColor})=>{
       white:  "lightgray",
       blue:   "dodgerblue",
       green:  "limegreen",
-      orange: "limegreen",
+      orange: "darkorange",
       pink:   "hotpink",
       purple: "blueviolet"
     }
