@@ -4,6 +4,9 @@ import { useEffect, useState } from "react";
 import { RollAction } from "./feature/rollAction/components/rollAction";
 import { RollResult } from "./feature/rollAction/models/models";
 import { NextRoundButton } from "./feature/nextRoundButton/components/nextRoundButton";
+import Image from "next/image";
+import MyIcon from "../public/SVG/camel.svg"
+import { CamelIcon } from "./components/camelIcon";
 
 export default function Home() {
   const [rollResult, setRollResult] = useState<RollResult|undefined>(undefined)
@@ -17,8 +20,11 @@ export default function Home() {
     <div>
       <RollAction roundNum={roundNum} setRollResult={setRollResult}/>
       {rollResult && 
-        <div>
-          結果：{rollResult.camel}が+{rollResult.dice}
+        <div className="flex items-center">
+          <div className="w-[100px] h-[100px]">
+            <CamelIcon camelColor={rollResult.camel}/>
+          </div>
+          <div className="text-5xl font-extrabold">+{rollResult.dice}</div>
         </div>
       }
       <NextRoundButton setRoundNum={setRoundNum}/>
