@@ -5,6 +5,8 @@ export type CamelColor = typeof camelColors[number]
 
 export const CamelSelector:React.FC = ()=>{
   const [selectedCamel, setCamel] = useState<CamelColor|null>(null)
+  const [remainingCamels, setRemainingCamels] = useState<CamelColor[]>([...camelColors])
+  
   return(
     <div>
       <button onClick={SelectRandomCamel}>start</button>
@@ -15,9 +17,18 @@ export const CamelSelector:React.FC = ()=>{
   )
 
   function SelectRandomCamel(){
-    const numOfCamels = camelColors.length
+    const numOfCamels = remainingCamels.length
+    if(numOfCamels === 0){
+      console.log("すべて抽選済みです");
+      return
+    }
 
     const randomIndex = Math.floor(Math.random() * numOfCamels)
-    setCamel(camelColors[randomIndex])
+
+    const selectedCamel = remainingCamels[randomIndex]
+    setCamel(selectedCamel)
+
+    const newRemainingCamels = remainingCamels.filter(camel => camel !== selectedCamel)
+    setRemainingCamels(newRemainingCamels)
   }
 }
