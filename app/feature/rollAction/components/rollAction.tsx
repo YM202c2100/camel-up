@@ -1,11 +1,19 @@
-import { Dispatch, SetStateAction, useState } from "react"
+import { Dispatch, SetStateAction, useEffect, useState } from "react"
 import { RollResult, CamelColor, camelColors, DiceValues } from "../models/models"
 import { getRandomCamel } from "../libs/camelSelector"
 import { rollDice } from "../libs/rollDice"
 
-export const RollAction:React.FC<{setRollResult:Dispatch<SetStateAction<RollResult|undefined>>}> = ({setRollResult})=>{
+type RollActionProps = {
+  roundNum: number
+  setRollResult:Dispatch<SetStateAction<RollResult|undefined>>
+}
+export const RollAction:React.FC<RollActionProps> = ({roundNum, setRollResult})=>{
   const [remainingCamels, setRemainingCamels] = useState<CamelColor[]>([...camelColors])
   const rollLimit = 5
+
+  useEffect(()=>{
+    setRemainingCamels([...camelColors])
+  },[roundNum])
 
   return(
     <div>
