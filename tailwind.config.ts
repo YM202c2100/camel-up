@@ -13,6 +13,27 @@ export default {
         foreground: "var(--foreground)",
       },
     },
+    keyframes: {
+      drop: {
+        "0%": { transform: "translateY(-100px) rotate(1deg)"},
+        "100%": { transform: "translateY(0px) rotate(0deg)"}
+      },
+      "sand-right": {
+        "0%": { transform: "scale(0)", opacity: "1"},
+        "70%": { transform: "scale(1) skew(-10deg)", opacity: "1"},
+        "99%": { transform: "scale(1.2) skew(-11deg)", opacity: "0.3"},
+      },
+      "sand-left": {
+        "0%": { transform: "scale(0)", opacity: "1"},
+        "70%": { transform: "scale(1.2) skew(8deg)", opacity: "1"},
+        "99%": { transform: "scale(1.5) skew(9deg)", opacity: "0.3"},
+      },
+    },
+    animation: {
+      drop: "drop 0.3s",
+      "sand-right": "sand-right 0.5s 0.3s ease-out",
+      "sand-left": "sand-left 0.5s 0.3s ease-out",
+    },
   },
   plugins: [],
 } satisfies Config;
