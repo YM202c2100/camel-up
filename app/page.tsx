@@ -1,5 +1,9 @@
+"use client"
+
+import { CamelSelector } from "./CamelSelector/camelSelector"
+
 export default function Home() {
   return (
-    <div>Initail</div>
+    <CamelSelector/>
   );
 }
