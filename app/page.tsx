@@ -4,9 +4,8 @@ import { useEffect, useState } from "react";
 import { RollAction } from "./feature/rollAction/components/rollAction";
 import { RollResult } from "./feature/rollAction/models/models";
 import { NextRoundButton } from "./feature/nextRoundButton/components/nextRoundButton";
-import Image from "next/image";
-import MyIcon from "../public/SVG/camel.svg"
 import { CamelIcon } from "./components/camelIcon";
+import { SandSmoke } from "./feature/rollAction/components/animation/sandSmoke";
 
 export default function Home() {
   const [rollResult, setRollResult] = useState<RollResult|undefined>(undefined)
@@ -28,6 +27,11 @@ export default function Home() {
         </div>
       }
       <NextRoundButton setRoundNum={setRoundNum}/>
+      <div className="flex items-end justify-center">
+        <SandSmoke side="left"/>
+        <div className="w-[300px] h-[300px] bg-red-300 animate-drop origin-bottom-right"></div>
+        <SandSmoke side="right"/>
+      </div>
     </div>
   );
 }
