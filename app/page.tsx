@@ -11,10 +11,6 @@ export const RollResultContext = createContext<RollResult>({camel:"black", dice:
 export default function Home() {
   const [rollResult, setRollResult] = useState<RollResult|undefined>(undefined)
   const [roundNum, setRoundNum] = useState<number>(1)
-
-  useEffect(()=>{
-    setRollResult(undefined)
-  }, [roundNum])
   
   return (
     <div>
