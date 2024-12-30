@@ -7,6 +7,8 @@ import { NextRoundButton } from "./feature/nextRoundButton/components/nextRoundB
 import { CamelIcon } from "./components/camelIcon";
 import { SandSmoke } from "./feature/rollAction/components/animation/sandSmoke";
 import { SunLight } from "./feature/rollAction/components/animation/sunLight";
+import { Ribeye } from "next/font/google";
+const diceResultFont = Ribeye({subsets:['latin'], weight:["400"]})
 
 export default function Home() {
   const [rollResult, setRollResult] = useState<RollResult|undefined>(undefined)
@@ -43,7 +45,7 @@ export default function Home() {
             <CamelIcon camelColor="purple"/>
           </div>
           <div className="absolute top-0 left-1/2 -translate-x-[100%] -translate-y-[68%]">
-            <p className="font-bold text-7xl origin-bottom animate-diceResult">1</p>
+            <p className={`${diceResultFont.className} font-bold text-[#930b55] text-7xl origin-bottom animate-diceResult`}>1</p>
           </div>
         </div>
 
