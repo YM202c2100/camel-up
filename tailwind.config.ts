@@ -63,7 +63,7 @@ export default {
     },
     animation: {
       pyramid: "drop 0.3s forwards, shake 1.5s 1.3s forwards, open 0.3s 4s forwards",
-      camel: "appear 0.5s 4.1s cubic-bezier(0.1,1.0,0.5,1.5) backwards",
+      appear: "appear 0.5s 4.1s cubic-bezier(0.1,1.0,0.5,1.5) backwards",
       "sand-right": "sand-right 0.4s 0.3s ease-out both",
       "sand-left": "sand-left 0.4s 0.3s ease-out both",
     },
