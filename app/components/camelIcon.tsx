@@ -25,8 +25,8 @@ export const CamelIcon:React.FC<{camelColor:CamelColor}> = ({camelColor})=>{
 
   function getFillingColor(camelColor:CamelColor){
     const fillingColors:Record<CamelColor, string> = {
-      black:  "rgb(50,50,50)",
-      white:  "lightgray",
+      black:  "#323232",
+      white:  "#e9e9e9",
       blue:   "dodgerblue",
       green:  "limegreen",
       orange: "darkorange",
