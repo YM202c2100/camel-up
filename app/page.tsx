@@ -1,11 +1,12 @@
 "use client"
 
-import { useEffect, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { RollAction } from "./feature/rollAction/components/rollAction";
 import { RollResult } from "./feature/rollAction/models/models";
 import { NextRoundButton } from "./feature/nextRoundButton/components/nextRoundButton";
-import { CamelIcon } from "./components/camelIcon";
 import { RollAnimation } from "./feature/rollAction/components/animation/rollAnimation";
+
+export const RollResultContext = createContext<RollResult>({camel:"black", dice:1})
 
 export default function Home() {
   const [rollResult, setRollResult] = useState<RollResult|undefined>(undefined)
@@ -18,16 +19,12 @@ export default function Home() {
   return (
     <div>
       <RollAction roundNum={roundNum} setRollResult={setRollResult}/>
-      {rollResult && 
-        <div className="flex items-center">
-          <div className="w-[100px] h-[100px]">
-            <CamelIcon camelColor={rollResult.camel}/>
-          </div>
-          <div className="text-5xl font-extrabold">+{rollResult.dice}</div>
-        </div>
+      {rollResult &&
+        <RollResultContext value={rollResult}>
+          <RollAnimation/>
+        </RollResultContext>
       }
       <NextRoundButton setRoundNum={setRoundNum}/>
-      <RollAnimation/>
     </div>
   );
 }
