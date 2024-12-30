@@ -3,7 +3,7 @@ import Image from "next/image"
 export const SunLight:React.FC = ()=>{
   return(
     <div className="animate-appear">
-      <div className="w-[1600px] h-[1600px] relative">
+      <div className="w-[1600px] h-[1600px] relative animate-sunlight">
         <Image src={"/SVG/sunLight.svg"}
         alt={"sun light svg"}
         fill style={{objectFit:"contain"}}
