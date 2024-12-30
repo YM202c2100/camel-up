@@ -28,23 +28,25 @@ export default function Home() {
         </div>
       }
       <NextRoundButton setRoundNum={setRoundNum}/>
-      <div 
-        className="flex items-end justify-center
-          z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-      >
-        <SandSmoke side="left"/>
-        <div className="w-[300px] h-[300px] bg-red-300 animate-pyramid"></div>
-        <SandSmoke side="right"/>
-      </div>
-
-      <div className="z-0 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <div className="w-[250px] h-[250px] relative animate-appear">
-          <CamelIcon camelColor="purple"/>
+      <div className="fixed inset-0 bg-white overflow-hidden">
+        <div 
+          className="flex items-end justify-center
+            z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        >
+          <SandSmoke side="left"/>
+          <div className="w-[300px] h-[300px] bg-red-300 animate-pyramid"></div>
+          <SandSmoke side="right"/>
         </div>
-      </div>
 
-      <div className="-z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
-        <SunLight/>
+        <div className="z-0 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <div className="w-[250px] h-[250px] relative animate-appear">
+            <CamelIcon camelColor="purple"/>
+          </div>
+        </div>
+
+        <div className="-z-10 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+          <SunLight/>
+        </div>
       </div>
     </div>
   );
