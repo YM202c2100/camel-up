@@ -8,7 +8,7 @@ export const SandSmoke:React.FC<{side:"left"|"right"}> = ({side})=>{
   return(
     <div 
       className={`w-[50px] h-[50px] relative 
-        opacity-0 ${origin} ${animation} ${topOffset}`}
+        ${origin} ${animation} ${topOffset}`}
     >
       <Image src={"/SVG/sandSmoke.svg"}
         alt={"sandSmoke"}
