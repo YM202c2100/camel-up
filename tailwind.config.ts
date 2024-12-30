@@ -39,7 +39,7 @@ export default {
         "85%":  { transform:"translateX(-5px)   scale(1.34, 1.17)"},
         "90%":  { transform:"translateX(5px)    scale(1.36, 1.18)"},
         "95%":  { transform:"translateX(-5px)   scale(1.38, 1.19)"},
-        "100%": { transform:"translateX(5px)    scale(1.40, 1.20)"}
+        "100%": { transform:"translateX(0px)    scale(1.40, 1.20)"}
       },
       "sand-right": {
         "0%": { transform:"scale(0)", opacity:"1"},
