@@ -5,7 +5,7 @@ import { rollDice } from "../libs/rollDice"
 
 type RollActionProps = {
   roundNum: number
-  setRollResult:Dispatch<SetStateAction<RollResult|undefined>>
+  setRollResult:Dispatch<SetStateAction<RollResult|null>>
 }
 export const RollAction:React.FC<RollActionProps> = ({roundNum, setRollResult})=>{
   const [remainingCamels, setRemainingCamels] = useState<CamelColor[]>([...camelColors])

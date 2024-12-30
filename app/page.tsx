@@ -9,7 +9,7 @@ import { RollAnimation } from "./feature/rollAction/components/animation/rollAni
 export const RollResultContext = createContext<RollResult>({camel:"black", dice:1})
 
 export default function Home() {
-  const [rollResult, setRollResult] = useState<RollResult|undefined>(undefined)
+  const [rollResult, setRollResult] = useState<RollResult|null>(null)
   const [roundNum, setRoundNum] = useState<number>(1)
   
   return (
@@ -25,6 +25,6 @@ export default function Home() {
   );
 
   function quitAnimation(){
-    setRollResult(undefined)
+    setRollResult(null)
   }
 }
