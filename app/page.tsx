@@ -27,11 +27,17 @@ export default function Home() {
         </div>
       }
       <NextRoundButton setRoundNum={setRoundNum}/>
-      <div className="flex items-end justify-center">
+      <div 
+        className="flex items-end justify-center
+          absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+      >
         <SandSmoke side="left"/>
         <div className="w-[300px] h-[300px] bg-red-300 animate-pyramid"></div>
         <SandSmoke side="right"/>
-        <div className="w-[250px] h-[250px] absolute animate-camel">
+      </div>
+
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="w-[250px] h-[250px] relative animate-camel">
           <CamelIcon camelColor="purple"/>
         </div>
       </div>
