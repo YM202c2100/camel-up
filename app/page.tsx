@@ -21,10 +21,14 @@ export default function Home() {
       <RollAction roundNum={roundNum} setRollResult={setRollResult}/>
       {rollResult &&
         <RollResultContext value={rollResult}>
-          <RollAnimation/>
+          <RollAnimation quitAnimation={quitAnimation}/>
         </RollResultContext>
       }
       <NextRoundButton setRoundNum={setRoundNum}/>
     </div>
   );
+
+  function quitAnimation(){
+    setRollResult(undefined)
+  }
 }
