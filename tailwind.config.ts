@@ -57,6 +57,10 @@ export default {
         "0%": { transform:"rotate(0deg)"},
         "100%": { transform:"rotate(360deg)"}
       },
+      diceResult:{
+        "0%": { transform:"scale(0)"},
+        "100%": { transform:"scale(1)"}
+      },
       "sand-right": {
         "0%": { transform:"scale(0)", opacity:"1"},
         "70%": { transform:"scale(1) skew(-10deg)", opacity:"0.8"},
@@ -71,6 +75,7 @@ export default {
     animation: {
       pyramid: "drop 0.3s forwards, shake 1.5s 1.3s forwards, open 0.3s 4s forwards",
       appear: "appear 0.5s 4.1s cubic-bezier(0.1,1.0,0.5,1.5) backwards",
+      diceResult: "diceResult 0.6s 4.8s cubic-bezier(0.1,1.0,0.5,1.5) backwards",
       sunlight: "spin 10s infinite linear",
       "sand-right": "sand-right 0.4s 0.3s ease-out both",
       "sand-left": "sand-left 0.4s 0.3s ease-out both",

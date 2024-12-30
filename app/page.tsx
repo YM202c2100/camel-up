@@ -38,9 +38,12 @@ export default function Home() {
           <SandSmoke side="right"/>
         </div>
 
-        <div className="z-0 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+        <div className="z-0 absolute top-1/2 left-1/2 -translate-x-[47%] -translate-y-[45%]">
           <div className="w-[250px] h-[250px] relative animate-appear">
             <CamelIcon camelColor="purple"/>
+          </div>
+          <div className="absolute top-0 left-1/2 -translate-x-[100%] -translate-y-[68%]">
+            <p className="font-bold text-7xl origin-bottom animate-diceResult">1</p>
           </div>
         </div>
 
