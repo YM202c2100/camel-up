@@ -45,6 +45,11 @@ export default {
         "0%": { transform:"translateX(0px) translateY(0px) scale(1.40, 1.20) rotate(0deg)"},
         "100%": { transform:"translateX(2px) translateY(-800px) scale(1.2, 1.2) rotate(3deg)"},
       },
+      appear:{
+        "0%": { transform:"scale(0)"},
+        "70%": { transform:"scale(1.1)"},
+        "100%": { transform:"scale(1)"}
+      },
       "sand-right": {
         "0%": { transform:"scale(0)", opacity:"1"},
         "70%": { transform:"scale(1) skew(-10deg)", opacity:"0.8"},
@@ -58,6 +63,7 @@ export default {
     },
     animation: {
       pyramid: "drop 0.3s forwards, shake 1.5s 1.3s forwards, open 0.3s 4s forwards",
+      camel: "appear 0.5s 4.1s cubic-bezier(0.1,1.0,0.5,1.5) backwards",
       "sand-right": "sand-right 0.4s 0.3s ease-out both",
       "sand-left": "sand-left 0.4s 0.3s ease-out both",
     },

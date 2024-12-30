@@ -31,6 +31,9 @@ export default function Home() {
         <SandSmoke side="left"/>
         <div className="w-[300px] h-[300px] bg-red-300 animate-pyramid"></div>
         <SandSmoke side="right"/>
+        <div className="w-[250px] h-[250px] absolute animate-camel">
+          <CamelIcon camelColor="purple"/>
+        </div>
       </div>
     </div>
   );
