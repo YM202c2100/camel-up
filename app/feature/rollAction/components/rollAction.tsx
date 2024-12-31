@@ -16,8 +16,8 @@ export const RollAction:React.FC<RollActionProps> = ({roundNum, setRoundResult})
   const remainingCamels = useRemainingCamels()
 
   return(<>
-    <div 
-      className="h-full w-full overflow-hidden cursor-pointer" 
+    <div
+      className="h-full w-full cursor-pointer"
       onClick={advanceRace}
     >
       <Image src={"/SVG/pyramidIcon.svg"}
