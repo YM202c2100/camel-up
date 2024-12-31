@@ -5,6 +5,7 @@ import { RollAction } from "./feature/rollAction/components/rollAction";
 import { RollResult } from "./feature/rollAction/models/models";
 import { NextRoundButton } from "./feature/nextRoundButton/components/nextRoundButton";
 import { SelectedCamels } from "./feature/selectedCamels/components/selectedCamels";
+import { RemainginCamels } from "./feature/remainingCamels/remainingCamels";
 
 export const RoundResultContext = createContext<RollResult[]>([])
 
@@ -21,9 +22,11 @@ export default function Home() {
       <div className="grid grid-cols-2 h-lvh p-10 gap-3">
         <div className="grid grid-rows-10 gap-3">
           <div className="border-4 border-orange-300 bg-orange-50 row-span-7 rounded-md shadow-2xl">
-              <RollAction roundNum={roundNum} setRoundResult={setRoundResult}/>
+            <RollAction roundNum={roundNum} setRoundResult={setRoundResult}/>
           </div>
-          <div className="bg-blue-300 row-span-3 rounded-md"></div>
+          <div className="bg-black row-span-3 rounded-md flex justify-center p-3">
+            <RemainginCamels/>
+          </div>
         </div>
 
         <div className="grid grid-cols-2 grid-rows-3 gap-2">
