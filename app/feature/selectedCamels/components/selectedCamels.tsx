@@ -28,12 +28,12 @@ const CamelCard:React.FC<{result:RollResult|undefined, idx:number}> = ({result, 
           </div>
           <div
             className="w-[75%] h-[30%] -skew-x-[45deg]
-            bg-amber-50 border-[4px] border-amber-950 rounded-md
+            bg-amber-50 border border-black rounded-md
             relative bottom-3
             flex justify-around items-center"
           >
             <p className={`text-[40px] ${camelCardFont.className}`}>Camel up!</p>
-            <p className={`text-5xl text-amber-950 ${diceResultFont.className}`}>{result.dice}</p>
+            <p className={`text-5xl text-black ${diceResultFont.className}`}>{result.dice}</p>
           </div>
         </>
       }
