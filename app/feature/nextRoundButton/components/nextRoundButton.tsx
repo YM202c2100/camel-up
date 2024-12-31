@@ -1,12 +1,14 @@
+import { diceResultFont } from "@/app/page"
 import { Dispatch, SetStateAction } from "react"
 
 export const NextRoundButton:React.FC<{setRoundNum:Dispatch<SetStateAction<number>>}> = ({setRoundNum})=>{
   return(
     <button
       onClick={incrementRound}
-      className="border-2 border-black p-3 m-3"
+      className={`bg-red-800 p-3 rounded-3xl m-8 text-white text-6xl ${diceResultFont.className}`}
     >
-      次のラウンドへ
+      <p className="text-start">NEXT</p>
+      <p className="text-end">ROUND</p>
     </button>
   )
 
