@@ -3,10 +3,11 @@ import { SandSmoke } from "./sandSmoke"
 
 export const Pyramid:React.FC = ()=>{
   return(
-    <div className="flex items-end justify-center">
-      <SandSmoke side="left"/>
+    <div>
       <PyramidImage/>
+      <SandSmoke side="left"/>
       <SandSmoke side="right"/>
+      <SandSmoke side="center"/>
     </div>
   )
 }
