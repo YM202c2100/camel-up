@@ -11,7 +11,7 @@ export const SunLight:React.FC = ()=>{
       </div>
       <div 
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 
-          w-[1050px] aspect-square rounded-full
+          w-[1150px] aspect-square rounded-full
           bg-sunGrad"
       ></div>
     </div>

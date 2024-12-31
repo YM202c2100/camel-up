@@ -13,7 +13,7 @@ export default {
         foreground: "var(--foreground)",
       },
       backgroundImage:{
-        sunGrad:"radial-gradient(circle, rgba(255,255,255,0) 20%, rgba(255,255,255,1) 60%, rgba(255,255,255,1) 100%)"
+        sunGrad:"radial-gradient(circle, rgba(255,255,255,0) 20%, rgba(63,63,70,1) 60%, rgba(63,63,70,1) 100%)"
       },
     },
     keyframes: {
