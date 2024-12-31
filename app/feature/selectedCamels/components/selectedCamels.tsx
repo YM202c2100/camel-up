@@ -1,8 +1,10 @@
 import { CamelIcon } from "@/app/components/camelIcon"
-import { dotFont, RoundResultContext } from "@/app/page"
+import { diceResultFont, dotFont, RoundResultContext } from "@/app/page"
 import { useContext } from "react"
 import { RollResult } from "../../rollAction/models/models"
 import { rollLimit } from "@/app/config"
+import { Honk } from "next/font/google"
+const camelCardFont = Honk({weight:["400"]})
 
 export const SelectedCamels:React.FC = ()=>{
   const roundRollResult = useContext(RoundResultContext)
@@ -16,15 +18,21 @@ export const SelectedCamels:React.FC = ()=>{
 
 const CamelCard:React.FC<{result:RollResult|undefined, idx:number}> = ({result, idx})=>{
   return(
-    <div className="flex justify-center items-end relative border-4 border-gray-400 rounded-md">
+    <div className="flex justify-center items-end relative border-4 border-gray-300 bg-blue-50 rounded-xl">
       <p className={`absolute top-0 right-0 m-1 text-xl ${dotFont.className}`}>{idx+1}頭目</p>
       {result &&
         <>
           <div className="w-[150px] aspect-square absolute z-10 -scale-x-100 bottom-6 left-10">
             <CamelIcon camelColor={result.camel}/>
           </div>
-          <div className="w-[75%] h-[30%] -skew-x-[45deg] bg-green-200 relative bottom-3 rounded-md flex justify-end items-center">
-            <p className="text-5xl mr-10">{result.dice}</p>
+          <div 
+            className="w-[75%] h-[30%] -skew-x-[45deg]
+            bg-amber-50 border-[4px] border-amber-950 rounded-md
+            relative bottom-3 
+            flex justify-around items-center"
+          >
+            <p className={`text-[40px] ${camelCardFont.className}`}>Camel up!</p>
+            <p className={`text-5xl text-amber-950 ${diceResultFont.className}`}>{result.dice}</p>
           </div>
         </>
       }
