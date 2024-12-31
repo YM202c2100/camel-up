@@ -24,7 +24,7 @@ const CamelCard:React.FC<{result:RollResult|undefined, idx:number}> = ({result, 
         <>
           <div className="w-[170px] aspect-square absolute z-10 -scale-x-100 bottom-8 left-10">
             <CamelIcon camelColor={result.camel}/>
-            <div className="absolute -z-10 w-[100px] h-[20px] bg-black opacity-80 blur-lg bottom-1"></div>
+            <div className="absolute -z-10 w-[90px] h-[15px] bg-black blur-xl bottom-1"></div>
           </div>
           <div
             className="w-[75%] h-[30%] -skew-x-[45deg]
