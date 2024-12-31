@@ -3,6 +3,7 @@ import { RollResult, CamelColor, camelColors, DiceValues } from "../models/model
 import { getRandomCamel } from "../libs/camelSelector"
 import { rollDice } from "../libs/rollDice"
 import { RollAnimation } from "./animation/rollAnimation"
+import { rollLimit } from "@/app/config"
 
 type RollActionProps = {
   roundNum: number
@@ -11,7 +12,6 @@ type RollActionProps = {
 export const RollAction:React.FC<RollActionProps> = ({roundNum, setRoundResult})=>{
   const [remainingCamels, setRemainingCamels] = useState<CamelColor[]>([...camelColors])
   const [isAnimate, setIsAnimate] = useState<boolean>(false)
-  const rollLimit = 5
 
   useEffect(()=>{
     setRemainingCamels([...camelColors])

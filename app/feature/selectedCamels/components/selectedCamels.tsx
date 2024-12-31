@@ -2,10 +2,11 @@ import { CamelIcon } from "@/app/components/camelIcon"
 import { RoundResultContext } from "@/app/page"
 import { useContext } from "react"
 import { RollResult } from "../../rollAction/models/models"
+import { rollLimit } from "@/app/config"
 
 export const SelectedCamels:React.FC = ()=>{
   const roundRollResult = useContext(RoundResultContext)
-  const roundResultfilledNull = [...roundRollResult, ...Array(5-roundRollResult.length).fill(null)]
+  const roundResultfilledNull = [...roundRollResult, ...Array(rollLimit-roundRollResult.length).fill(null)]
   return(<>
     {roundResultfilledNull.map((result, idx) => (
       <CamelCard result={result} idx={idx} key={idx}/>
