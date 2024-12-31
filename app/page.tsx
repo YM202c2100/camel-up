@@ -25,7 +25,8 @@ export default function Home() {
             <p className="absolute left-1/2 -translate-x-1/2 text-4xl mt-5">レースを進める</p>
             <RollAction roundNum={roundNum} setRoundResult={setRoundResult}/>
           </div>
-          <div className="bg-black row-span-3 rounded-md flex justify-center p-3">
+          <div className="bg-black row-span-3 rounded-md flex justify-center p-3 relative">
+            <p className="absolute left-1/2 -translate-x-1/2 text-white text-xl">残りのラクダ</p>
             <RemainginCamels/>
           </div>
         </div>

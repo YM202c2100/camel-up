@@ -6,7 +6,7 @@ export const RemainginCamels:React.FC = ()=>{
   
   return(<>
     {remainingCamelColors.map(color => (
-      <div className="w-[60px]"  key={color}>
+      <div className="w-[60px] translate-y-3"  key={color}>
         <CamelIcon camelColor={color}/>
       </div>
     ))}
