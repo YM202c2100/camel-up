@@ -1,4 +1,3 @@
-import { Dispatch, SetStateAction } from "react";
 import { CamelColor } from "../models/models";
 
 export function getRandomCamel(

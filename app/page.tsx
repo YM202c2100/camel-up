@@ -5,7 +5,6 @@ import { RollAction } from "./feature/rollAction/components/rollAction";
 import { RollResult } from "./feature/rollAction/models/models";
 import { NextRoundButton } from "./feature/nextRoundButton/components/nextRoundButton";
 import { RollAnimation } from "./feature/rollAction/components/animation/rollAnimation";
-import { CamelIcon } from "./components/camelIcon";
 import { SelectedCamels } from "./feature/selectedCamels/components/selectedCamels";
 
 export const RollResultContext = createContext<RollResult>({camel:"black", dice:1})
