@@ -20,11 +20,11 @@ const CamelCard:React.FC<{result:RollResult|undefined, idx:number}> = ({result, 
       <p className={`absolute top-0 right-0 m-1 text-xl ${dotFont.className}`}>{idx+1}頭目</p>
       {result &&
         <>
-          <div className="w-[100px] aspect-square absolute z-10 -scale-x-100 bottom-6 left-10">
+          <div className="w-[150px] aspect-square absolute z-10 -scale-x-100 bottom-6 left-10">
             <CamelIcon camelColor={result.camel}/>
           </div>
           <div className="w-[75%] h-[30%] -skew-x-[45deg] bg-green-200 relative bottom-3 rounded-md flex justify-end items-center">
-            <p className="text-3xl mr-5">{result.dice}</p>
+            <p className="text-5xl mr-10">{result.dice}</p>
           </div>
         </>
       }
