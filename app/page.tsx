@@ -21,7 +21,8 @@ export default function Home() {
     <RoundResultContext value={roundResult}>
       <div className="grid grid-cols-2 h-lvh p-10 gap-3">
         <div className="grid grid-rows-10 gap-3">
-          <div className="border-4 border-orange-300 bg-orange-50 row-span-7 rounded-md shadow-2xl">
+          <div className="border-4 border-orange-300 bg-orange-50 row-span-7 rounded-md shadow-2xl relative">
+            <p className="absolute left-1/2 -translate-x-1/2 text-4xl mt-5">レースを進める</p>
             <RollAction roundNum={roundNum} setRoundResult={setRoundResult}/>
           </div>
           <div className="bg-black row-span-3 rounded-md flex justify-center p-3">

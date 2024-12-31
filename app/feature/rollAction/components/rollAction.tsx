@@ -17,10 +17,9 @@ export const RollAction:React.FC<RollActionProps> = ({roundNum, setRoundResult})
 
   return(<>
     <div 
-      className="h-full w-full relative overflow-hidden cursor-pointer" 
+      className="h-full w-full overflow-hidden cursor-pointer" 
       onClick={advanceRace}
     >
-      <p className="absolute left-1/2 -translate-x-1/2 text-4xl mt-5">レースを進める</p>
       <Image src={"/SVG/pyramidIcon.svg"}
         alt={"pyramid svg icon"}
         fill style={{objectFit:"contain", transform:"scale(1.3) translateY(20px)"}}
