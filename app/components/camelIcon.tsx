@@ -3,7 +3,7 @@ import { CamelColor } from "../feature/rollAction/models/models"
 export const CamelIcon:React.FC<{camelColor:CamelColor}> = ({camelColor})=>{
 
   const fillingColor = getFillingColor(camelColor)
-  
+  const strokeColor = (camelColor==="black") ? "white":"gray"
   return(
     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" width="100%" height="100%">
       <path d="M511.874,92.334c-3.346-26.823-23.47-32.411-34.645-32.411c-11.174,0-21.517,0-21.517,0
@@ -19,7 +19,7 @@ export const CamelIcon:React.FC<{camelColor:CamelColor}> = ({camelColor})=>{
         c0,0,2.24-82.705,2.24-89.406c0-2.324,4.157-11.152,9.6-22.175c0.795,9.91,1.575,17.701,1.575,17.701l13.408,93.88h31.291
         c0,0-8.934-82.705-8.934-89.406c0-5.686,5.36-72.507,7.889-100.838c75.544-2.559,103.911-42.216,103.911-136.989
         c0-29.058,4.475-29.066,14.53-29.066c10.054,0,26.785,2.006,35.72-1.34c8.949-3.347,6.708-11.175,6.708-11.175
-        S512.994,103.509,511.874,92.334z" fill={fillingColor}></path>
+        S512.994,103.509,511.874,92.334z" fill={fillingColor} stroke={strokeColor} strokeWidth={5}></path>
     </svg>
   )
 
