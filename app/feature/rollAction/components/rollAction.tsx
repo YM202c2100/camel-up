@@ -4,6 +4,7 @@ import { getRandomCamel } from "../libs/camelSelector"
 import { rollDice } from "../libs/rollDice"
 import { RollAnimation } from "./animation/rollAnimation"
 import { rollLimit } from "@/app/config"
+import Image from "next/image"
 
 type RollActionProps = {
   roundNum: number
@@ -17,19 +18,22 @@ export const RollAction:React.FC<RollActionProps> = ({roundNum, setRoundResult})
     setRemainingCamels([...camelColors])
   },[roundNum])
 
-  return(
-    <div>
-      <button 
-        onClick={advanceRace}
-        className="border-2 border-black p-3 m-3"
-      >
-        レースを進める
-      </button>
-      {isAnimate &&
-        <RollAnimation quitAnimation={quitAnimation}/>
-      }
+  return(<>
+    <div 
+      className="h-full w-full relative overflow-hidden cursor-pointer" 
+      onClick={advanceRace}
+    >
+      <p className="absolute left-1/2 -translate-x-1/2 text-4xl mt-5">レースを進める</p>
+      <Image src={"/SVG/pyramidIcon.svg"}
+        alt={"pyramid svg icon"}
+        fill style={{objectFit:"contain", transform:"scale(1.3) translateY(20px)"}}
+      />
     </div>
-  )
+
+    {isAnimate &&
+      <RollAnimation quitAnimation={quitAnimation}/>
+    }
+  </>)
 
   function advanceRace(){
     const canRoll = (camelColors.length - remainingCamels.length < rollLimit)
