@@ -1,10 +1,10 @@
 import { CamelIcon } from "@/app/components/camelIcon"
 import { DiceResult } from "./diceResult"
 import { useContext } from "react"
-import { RollResultContext } from "@/app/page"
+import { RoundResultContext } from "@/app/page"
 
 export const Camel:React.FC = ()=>{
-  const rollResult = useContext(RollResultContext)
+  const rollResult = useContext(RoundResultContext).slice(-1)[0]
   return(
     <>
       <div className="w-[250px] h-[250px] relative animate-appear">

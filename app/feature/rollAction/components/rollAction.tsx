@@ -1,14 +1,16 @@
-import { Dispatch, SetStateAction, useEffect, useState } from "react"
+import { Dispatch, SetStateAction, useContext, useEffect, useState } from "react"
 import { RollResult, CamelColor, camelColors, DiceValues } from "../models/models"
 import { getRandomCamel } from "../libs/camelSelector"
 import { rollDice } from "../libs/rollDice"
+import { RollAnimation } from "./animation/rollAnimation"
 
 type RollActionProps = {
   roundNum: number
-  setRollResult:Dispatch<SetStateAction<RollResult|null>>
+  setRoundResult:Dispatch<SetStateAction<RollResult[]>>
 }
-export const RollAction:React.FC<RollActionProps> = ({roundNum, setRollResult})=>{
+export const RollAction:React.FC<RollActionProps> = ({roundNum, setRoundResult})=>{
   const [remainingCamels, setRemainingCamels] = useState<CamelColor[]>([...camelColors])
+  const [isAnimate, setIsAnimate] = useState<boolean>(false)
   const rollLimit = 5
 
   useEffect(()=>{
@@ -23,6 +25,9 @@ export const RollAction:React.FC<RollActionProps> = ({roundNum, setRollResult})=
       >
         レースを進める
       </button>
+      {isAnimate &&
+        <RollAnimation quitAnimation={quitAnimation}/>
+      }
     </div>
   )
 
@@ -33,13 +38,18 @@ export const RollAction:React.FC<RollActionProps> = ({roundNum, setRollResult})=
       const diceResult:DiceValues = rollDice()
 
       updateRemainingCamels(camelResult)
-
-      setRollResult({camel:camelResult, dice:diceResult})
+      const rollResult = {camel:camelResult, dice:diceResult}
+      setRoundResult(prev => [...prev, rollResult])
+      setIsAnimate(true)
     }
   }
 
   function updateRemainingCamels(camelResult:CamelColor){
     const newRemainingCamels = remainingCamels.filter(camel => camel !== camelResult)
     setRemainingCamels(newRemainingCamels)
+  }
+
+  function quitAnimation(){
+    setIsAnimate(false)
   }
 }
