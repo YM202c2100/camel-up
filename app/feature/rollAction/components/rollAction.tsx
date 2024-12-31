@@ -5,18 +5,15 @@ import { rollDice } from "../libs/rollDice"
 import { RollAnimation } from "./animation/rollAnimation"
 import { rollLimit } from "@/app/config"
 import Image from "next/image"
+import { useRemainingCamels } from "@/app/hooks/useRemainingCamels"
 
 type RollActionProps = {
   roundNum: number
   setRoundResult:Dispatch<SetStateAction<RollResult[]>>
 }
 export const RollAction:React.FC<RollActionProps> = ({roundNum, setRoundResult})=>{
-  const [remainingCamels, setRemainingCamels] = useState<CamelColor[]>([...camelColors])
   const [isAnimate, setIsAnimate] = useState<boolean>(false)
-
-  useEffect(()=>{
-    setRemainingCamels([...camelColors])
-  },[roundNum])
+  const remainingCamels = useRemainingCamels()
 
   return(<>
     <div 
@@ -41,16 +38,10 @@ export const RollAction:React.FC<RollActionProps> = ({roundNum, setRoundResult})
       const camelResult:CamelColor = getRandomCamel(remainingCamels)
       const diceResult:DiceValues = rollDice()
 
-      updateRemainingCamels(camelResult)
       const rollResult = {camel:camelResult, dice:diceResult}
       setRoundResult(prev => [...prev, rollResult])
       setIsAnimate(true)
     }
-  }
-
-  function updateRemainingCamels(camelResult:CamelColor){
-    const newRemainingCamels = remainingCamels.filter(camel => camel !== camelResult)
-    setRemainingCamels(newRemainingCamels)
   }
 
   function quitAnimation(){

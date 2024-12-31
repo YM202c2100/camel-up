@@ -1,12 +1,8 @@
-import { RoundResultContext } from "@/app/page"
-import { useContext } from "react"
-import { camelColors } from "../rollAction/models/models"
 import { CamelIcon } from "@/app/components/camelIcon"
+import { useRemainingCamels } from "@/app/hooks/useRemainingCamels"
 
 export const RemainginCamels:React.FC = ()=>{
-  const roundResult = useContext(RoundResultContext)
-  const selectedColors = roundResult.map(result => result.camel)
-  const remainingCamelColors = camelColors.filter(color => !selectedColors.includes(color))
+  const remainingCamelColors = useRemainingCamels()
   
   return(<>
     {remainingCamelColors.map(color => (
