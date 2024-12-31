@@ -6,6 +6,15 @@ export const CamelIcon:React.FC<{camelColor:CamelColor}> = ({camelColor})=>{
   const strokeColor = (camelColor==="black") ? "white":"gray"
   return(
     <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" width="100%" height="100%">
+      <defs>
+        <GradDef id="black" bottomColor="#000" topColor="#323232"/>
+        <GradDef id="white" bottomColor="#e9e9e9" topColor="#fff"/>
+        <GradDef id="blue" bottomColor="#1972cc" topColor="#1e90ff"/>
+        <GradDef id="green" bottomColor="#18a918" topColor="#32cd32"/>
+        <GradDef id="orange" bottomColor="#ff8c00" topColor="#eda956"/>
+        <GradDef id="purple" bottomColor="#6409ba" topColor="#8a2be2"/>
+        <GradDef id="pink" bottomColor="#d22179" topColor="#ff69b4"/>
+      </defs>
       <path d="M511.874,92.334c-3.346-26.823-23.47-32.411-34.645-32.411c-11.174,0-21.517,0-21.517,0
         s-4.187-17.602-16.762-17.602c-5.587,0-34.365,0-34.365,0l-17.882-5.587c-6.7,4.474,2.234,16.762,2.234,16.762
         s-12.295,9.782-12.295,47.78c0,37.998,0,51.414,0,63.702c0,24.591-39.975,31.344-56.48,5.709
@@ -25,15 +34,29 @@ export const CamelIcon:React.FC<{camelColor:CamelColor}> = ({camelColor})=>{
 
   function getFillingColor(camelColor:CamelColor){
     const fillingColors:Record<CamelColor, string> = {
-      black:  "#323232",
-      white:  "#e9e9e9",
-      blue:   "dodgerblue",
-      green:  "limegreen",
-      orange: "darkorange",
-      pink:   "hotpink",
-      purple: "blueviolet"
+      black:  "url(#black)",
+      white:  "url(#white)",
+      blue:   "url(#blue)",
+      green:  "url(#green)",
+      orange: "url(#orange)",
+      pink:   "url(#pink)",
+      purple: "url(#purple)"
     }
     
     return fillingColors[camelColor]
   }
+}
+
+type GradDefProps = {
+  id:string,
+  bottomColor:string,
+  topColor:string
+}
+const GradDef:React.FC<GradDefProps> = ({id, bottomColor, topColor})=>{
+  return(
+    <linearGradient id={id} x1={"0%"} x2={"0%"} y1={"0%"} y2={"100%"}>
+      <stop offset={"0%"} stopColor={topColor}></stop>
+      <stop offset={"100%"} stopColor={bottomColor}></stop>
+    </linearGradient>
+  )
 }
