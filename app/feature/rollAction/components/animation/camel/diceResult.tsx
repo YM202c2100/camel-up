@@ -1,7 +1,5 @@
-import { RoundResultContext } from "@/app/page";
-import { Ribeye } from "next/font/google";
+import { diceResultFont, RoundResultContext } from "@/app/page";
 import { useContext } from "react";
-const diceResultFont = Ribeye({subsets:['latin'], weight:["400"]})
 
 export const DiceResult:React.FC = ()=>{
   const rollResult = useContext(RoundResultContext).slice(-1)[0]

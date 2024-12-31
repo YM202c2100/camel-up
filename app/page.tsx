@@ -7,9 +7,13 @@ import { NextRoundButton } from "./feature/nextRoundButton/components/nextRoundB
 import { SelectedCamels } from "./feature/selectedCamels/components/selectedCamels";
 import { RemainginCamels } from "./feature/remainingCamels/remainingCamels";
 import { DotGothic16 } from "next/font/google";
-export const RoundResultContext = createContext<RollResult[]>([])
+import { Ribeye } from "next/font/google";
 
 export const dotFont = DotGothic16({subsets:["latin"], weight:["400"]})
+export const diceResultFont = Ribeye({subsets:['latin'], weight:["400"]})
+
+export const RoundResultContext = createContext<RollResult[]>([])
+
 export default function Home() {
   const [roundResult, setRoundResult] = useState<RollResult[]>([])
   const [roundNum, setRoundNum] = useState<number>(1)
