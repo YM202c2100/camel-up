@@ -17,7 +17,7 @@ export const SelectedCamels:React.FC = ()=>{
 const CamelCard:React.FC<{result:RollResult|undefined, idx:number}> = ({result, idx})=>{
   return(
     <div className="flex justify-center items-end relative border-4 border-gray-400 rounded-md">
-      <p className={`absolute top-0 right-0 m-1 ${dotFont.className}`}>{idx+1}頭目</p>
+      <p className={`absolute top-0 right-0 m-1 text-xl ${dotFont.className}`}>{idx+1}頭目</p>
       {result &&
         <>
           <div className="w-[100px] aspect-square absolute z-10 -scale-x-100 bottom-6 left-10">
