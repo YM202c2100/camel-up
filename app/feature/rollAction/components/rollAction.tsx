@@ -8,10 +8,9 @@ import Image from "next/image"
 import { useRemainingCamels } from "@/app/hooks/useRemainingCamels"
 
 type RollActionProps = {
-  roundNum: number
   setRoundResult:Dispatch<SetStateAction<RollResult[]>>
 }
-export const RollAction:React.FC<RollActionProps> = ({roundNum, setRoundResult})=>{
+export const RollAction:React.FC<RollActionProps> = ({setRoundResult})=>{
   const [isAnimate, setIsAnimate] = useState<boolean>(false)
   const remainingCamels = useRemainingCamels()
 
