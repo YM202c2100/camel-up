@@ -21,6 +21,11 @@ export default {
         "0%": { transform: "translateY(-100px) rotate(1deg)"},
         "100%": { transform: "translateY(0px) rotate(0deg)"}
       },
+      shrink:{
+        "0%": { transform: "scaleY(1)"},
+        "60%": { transform: "scaleY(0.95)"},
+        "100%": { transform: "scaleY(1)"},
+      },
       shake: {
         "0%":   { transform:"translateX(3px)    scale(1.00, 1.00)"},
         "5%":   { transform:"translateX(-3.2px) scale(1.02, 1.01)"},
@@ -73,7 +78,7 @@ export default {
       },
     },
     animation: {
-      pyramid: "drop 0.3s forwards, shake 1.5s 1.3s forwards, open 0.3s 4s forwards",
+      pyramid: "drop 0.3s forwards, shrink 0.5s 0.25s ease-in-out, shake 1.5s 1.3s forwards, open 0.3s 4s forwards",
       appear: "appear 0.5s 4.1s cubic-bezier(0.1,1.0,0.5,1.5) backwards",
       diceResult: "diceResult 0.6s 4.8s cubic-bezier(0.1,1.0,0.5,1.5) backwards",
       sunlight: "spin 10s infinite linear",

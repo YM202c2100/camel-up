@@ -6,7 +6,7 @@ export const Pyramid:React.FC = ()=>{
     <div>
       <div 
         className="w-[600px] aspect-[10/7] relative
-          animate-pyramid"
+          animate-pyramid origin-bottom"
       >
         <PyramidImage/>
       </div>
