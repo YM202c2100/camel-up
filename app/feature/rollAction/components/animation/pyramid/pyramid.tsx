@@ -4,7 +4,13 @@ import { SandSmoke } from "./sandSmoke"
 export const Pyramid:React.FC = ()=>{
   return(
     <div>
-      <PyramidImage/>
+      <div 
+        className="w-[600px] aspect-[10/7] relative
+          animate-pyramid"
+      >
+        <PyramidImage/>
+      </div>
+      
       <SandSmoke side="left"/>
       <SandSmoke side="right"/>
       <SandSmoke side="center"/>
