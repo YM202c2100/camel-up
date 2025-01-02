@@ -76,6 +76,12 @@ export default {
         "70%": { transform:"scale(1.2) skew(8deg)", opacity:"0.8"},
         "100%": { transform:"scale(1.5) skew(9deg)", opacity:"0", filter:"blur(4px)"},
       },
+      flickering: {
+        "0%": { opacity:"1"},
+        "50%": { opacity:"1"},
+        "51%": { opacity:"0"},
+        "100%": { opacity:"0"},
+      }
     },
     animation: {
       pyramid: "drop 0.3s forwards, shrink 0.5s 0.25s ease-in-out, shake 1.5s 1.3s forwards, open 0.3s 4s forwards",
@@ -84,6 +90,7 @@ export default {
       sunlight: "spin 10s infinite linear",
       "sand-right": "sand-right 0.4s 0.3s ease-out both",
       "sand-left": "sand-left 0.4s 0.3s ease-out both",
+      flickering: "flickering 1.5s infinite",
     },
   },
   plugins: [],
