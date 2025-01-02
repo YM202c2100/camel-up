@@ -1,5 +1,6 @@
 "use client"
 import { useState } from "react"
+import { Score } from "./score"
 
 export const PlayerCards:React.FC = ()=>{
   return(
@@ -48,7 +49,7 @@ const PlayerCard:React.FC = ()=>{
           </>}
         </div>
       </div>
-      <p className="text-7xl">24</p>
+      <Score/>
     </div>
   )
 }
