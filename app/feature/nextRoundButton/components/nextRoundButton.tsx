@@ -8,7 +8,7 @@ export const NextRoundButton:React.FC<{setRoundNum:Dispatch<SetStateAction<numbe
   return(
     <button
       onClick={incrementRound}
-      className={`p-3 m-8 text-6xl rounded-3xl
+      className={`p-3 m-1 text-4xl rounded-3xl
         ${isDisabled ? "bg-gray-400 text-gray-300":"bg-red-800 text-white"} 
         ${diceResultFont.className}`
       }

@@ -3,40 +3,34 @@ import { diceResultFont, dotFont, RoundResultContext } from "@/app/page"
 import { useContext } from "react"
 import { RollResult } from "../../rollAction/models/models"
 import { rollLimit } from "@/app/config"
-import { Honk } from "next/font/google"
-const camelCardFont = Honk({weight:["400"]})
 
 export const SelectedCamels:React.FC = ()=>{
   const roundRollResult = useContext(RoundResultContext)
   const roundResultfilledNull = [...roundRollResult, ...Array(rollLimit-roundRollResult.length).fill(null)]
-  return(<>
-    {roundResultfilledNull.map((result, idx) => (
-      <CamelCard result={result} idx={idx} key={idx}/>
-    ))}
-  </>)
-}
-
-const CamelCard:React.FC<{result:RollResult|undefined, idx:number}> = ({result, idx})=>{
   return(
-    <div className="flex justify-center items-end relative border-4 border-gray-300 bg-blue-50 rounded-xl">
-      <p className={`absolute top-0 right-0 m-1 text-xl ${dotFont.className}`}>{idx+1}頭目</p>
-      {result &&
-        <>
-          <div className="w-[170px] aspect-square absolute z-10 -scale-x-100 bottom-8 left-10">
-            <CamelIcon camelColor={result.camel}/>
-            <div className="absolute -z-10 w-[90px] h-[15px] bg-black blur-xl bottom-1"></div>
-          </div>
-          <div
-            className="w-[75%] h-[30%] -skew-x-[45deg]
-            bg-amber-50 border border-black rounded-md
-            relative bottom-3
-            flex justify-around items-center"
-          >
-            <p className={`text-[40px] ${camelCardFont.className}`}>Camel up!</p>
-            <p className={`text-5xl text-black ${diceResultFont.className}`}>{result.dice}</p>
-          </div>
-        </>
-      }
+    <div className="row-span-4 bg-red-50 border-4 border-[#930b55] rounded-md flex flex-col">
+      <p className={`text-2xl text-[#73204e] mx-auto ${dotFont.className}`}>排出結果</p>
+      <div className="flex-grow flex flex-col justify-around items-center">
+        {roundResultfilledNull.map((result, idx) => (
+          <ComeOutCamel result={result} key={idx}/>
+        ))}
+      </div>
     </div>
   )
+}
+
+const ComeOutCamel:React.FC<{result:RollResult|undefined}> = ({result})=>{
+  return(<>
+    {result &&
+      <div>
+        <div className="flex items-end space-x-1">
+          <div className="w-[100px] aspect-square">
+            <CamelIcon camelColor={result.camel} reverse/>
+          </div>
+          <div className={`text-5xl text-[#930b55] ${diceResultFont.className}`}>{result.dice}</div>
+        </div>
+        <div className="h-[3px] bg-[#73204e] mx-auto mt-1 mb-2"></div>
+      </div>
+    }
+  </>)
 }
