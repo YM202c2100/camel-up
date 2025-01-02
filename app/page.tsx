@@ -2,7 +2,7 @@
 
 import { createContext, useEffect, useState } from "react";
 import { RollAction } from "./feature/rollAction/components/rollAction";
-import { RollResult } from "./feature/rollAction/models/models";
+import { RollResult } from "@/app/models/rollAction.model";
 import { NextRoundButton } from "./feature/nextRoundButton/components/nextRoundButton";
 import { SelectedCamels } from "./feature/selectedCamels/components/selectedCamels";
 import { RemainginCamels } from "./feature/remainingCamels/remainingCamels";

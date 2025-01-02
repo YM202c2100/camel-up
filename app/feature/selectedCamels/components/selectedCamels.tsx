@@ -1,7 +1,7 @@
 import { CamelIcon } from "@/app/components/camelIcon"
 import { diceResultFont, dotFont, RoundResultContext } from "@/app/page"
 import { useContext } from "react"
-import { RollResult } from "../../rollAction/models/models"
+import { RollResult } from "@/app/models/rollAction.model"
 import { rollLimit } from "@/app/config"
 
 export const SelectedCamels:React.FC = ()=>{

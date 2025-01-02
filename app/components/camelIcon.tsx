@@ -1,4 +1,4 @@
-import { CamelColor } from "../feature/rollAction/models/models"
+import { CamelColor } from "@/app/models/rollAction.model"
 
 export const CamelIcon:React.FC<{camelColor:CamelColor, reverse?:boolean}> = ({camelColor, reverse=false})=>{
 

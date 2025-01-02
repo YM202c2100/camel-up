@@ -1,6 +1,6 @@
 import { useContext } from "react"
 import { RoundResultContext } from "../page"
-import { CamelColor, camelColors } from "../feature/rollAction/models/models"
+import { CamelColor, camelColors } from "@/app/models/rollAction.model"
 
 export function useRemainingCamels():CamelColor[]{
   const roundResult = useContext(RoundResultContext)
