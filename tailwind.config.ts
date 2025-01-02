@@ -15,6 +15,9 @@ export default {
       backgroundImage:{
         sunGrad:"radial-gradient(circle, rgba(255,255,255,0) 20%, rgba(63,63,70,1) 60%, rgba(63,63,70,1) 100%)"
       },
+      gridTemplateColumns:{
+        20:"repeat(20, minmax(0, 1fr))"
+      }
     },
     keyframes: {
       drop: {

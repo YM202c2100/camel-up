@@ -3,7 +3,7 @@ import { useState } from "react"
 
 export const PlayerCards:React.FC = ()=>{
   return(
-    <div className="col-span-2 flex flex-col gap-2">
+    <div className="col-span-7 flex flex-col gap-2">
       <PlayerCard/>
       <PlayerCard/>
       <PlayerCard/>
