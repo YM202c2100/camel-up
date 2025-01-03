@@ -1,4 +1,4 @@
-import { CamelColor } from "../models/models";
+import { CamelColor } from "@/app/models/rollAction.model";
 
 export function getRandomCamel(
   remainingCamels:CamelColor[],

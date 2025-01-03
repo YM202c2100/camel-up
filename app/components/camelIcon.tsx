@@ -1,11 +1,12 @@
-import { CamelColor } from "../feature/rollAction/models/models"
+import { CamelColor } from "@/app/models/rollAction.model"
 
-export const CamelIcon:React.FC<{camelColor:CamelColor}> = ({camelColor})=>{
+export const CamelIcon:React.FC<{camelColor:CamelColor, reverse?:boolean}> = ({camelColor, reverse=false})=>{
 
   const fillingColor = getFillingColor(camelColor)
   const strokeColor = (camelColor==="black") ? "white":"gray"
+  const scaleForReverse = reverse ? "scale(-1,1)":"scale(1,1)"
   return(
-    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" width="100%" height="100%">
+    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" viewBox="0 0 512 512" width="100%" height="100%" transform={scaleForReverse}>
       <defs>
         <GradDef id="black" bottomColor="#000" topColor="#323232"/>
         <GradDef id="white" bottomColor="#e9e9e9" topColor="#fff"/>

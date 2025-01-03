@@ -1,5 +1,5 @@
 import { Dispatch, SetStateAction, useContext, useEffect, useState } from "react"
-import { RollResult, CamelColor, camelColors, DiceValues } from "../models/models"
+import { RollResult, CamelColor, camelColors, DiceValues } from "@/app/models/rollAction.model"
 import { getRandomCamel } from "../libs/camelSelector"
 import { rollDice } from "../libs/rollDice"
 import { RollAnimation } from "./animation/rollAnimation"
