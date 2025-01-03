@@ -5,7 +5,7 @@ import { PlayerInfo } from "@/app/models/playerCards.model"
 import { PlayerCard } from "./playerCard"
 
 export const PlayerCards:React.FC = ()=>{
-  const [playersInfo, setPlayersInfo] = useReducer(playersInfoReuducer, Array(5).fill({name:"Player", score:0}))
+  const [playersInfo, setPlayersInfo] = useReducer(playersInfoReuducer, Array(4).fill({name:"Player", score:0}))
   
   return(
     <div className="col-span-7 flex flex-col gap-2">
