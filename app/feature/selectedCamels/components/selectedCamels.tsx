@@ -24,12 +24,12 @@ const ComeOutCamel:React.FC<{result:RollResult|undefined}> = ({result})=>{
     {result &&
       <div>
         <div className="flex items-end space-x-1">
-          <div className="w-[100px] aspect-square">
+          <div className="w-[90px] aspect-square">
             <CamelIcon camelColor={result.camel} reverse/>
           </div>
           <div className={`text-5xl text-[#930b55] ${diceResultFont.className}`}>{result.dice}</div>
         </div>
-        <div className="h-[3px] bg-[#73204e] mx-auto mt-1 mb-2"></div>
+        <div className="h-[3px] bg-[#73204e] mx-auto mb-2"></div>
       </div>
     }
   </>)
