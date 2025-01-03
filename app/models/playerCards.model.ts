@@ -3,9 +3,10 @@ export type PlayerInfo = {
   score: number,
 }
 
-export type SetInfoAction = 
+export type SetInfoAction =
   {type:"changeName", value:string}
   |{type:"addScore", value:number}
+  |{type:"resetScore"}
 
 export type PlayerCardProps = {
   info: PlayerInfo,
