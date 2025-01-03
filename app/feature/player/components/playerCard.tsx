@@ -38,7 +38,7 @@ export const PlayerCard:React.FC<PlayerCardProps> = ({info,setInfo})=>{
           </>}
         </div>
       </div>
-      <Score/>
+      <Score info={info} setInfo={setInfo}/>
     </div>
   )
 }

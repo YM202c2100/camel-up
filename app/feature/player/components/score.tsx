@@ -1,7 +1,8 @@
+import { PlayerCardProps } from "@/app/models/playerCards.model";
 import { dotFont } from "@/app/page"
 import { useState } from "react";
 
-export const Score:React.FC = ()=>{
+export const Score:React.FC<PlayerCardProps> = ({info, setInfo})=>{
   const [isAcceptingEntries, setIsAccepted] = useState<boolean>(false)
   const [roundReturns, setReturns] = useState<number>(0)
   return(
@@ -12,7 +13,7 @@ export const Score:React.FC = ()=>{
         }} 
         className="text-7xl"
       >
-        24
+        {info.score}
       </p>
 
       {isAcceptingEntries &&
@@ -22,7 +23,7 @@ export const Score:React.FC = ()=>{
             onChange={e => setReturns(parseInt(e.target.value))}
             onKeyDown={e => {
               if(e.key === "Enter"){
-                console.log(roundReturns);
+                setInfo({type:"addScore", value:roundReturns})
                 setIsAccepted(false)
               }
             }}
