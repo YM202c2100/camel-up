@@ -4,13 +4,13 @@ import { useState } from "react";
 
 export const Score:React.FC<PlayerCardProps> = ({info, setInfo})=>{
   const [isAcceptingEntries, setIsAccepted] = useState<boolean>(false)
-  const [roundReturns, setReturns] = useState<number>(0)
+  const [roundReturns, setReturns] = useState<number>(1)
   return(
     <div className="relative">
       <p 
         onClick={()=>{
-          setIsAccepted(prev => !prev)
-        }} 
+          setIsAccepted(true)
+        }}
         className="text-7xl"
       >
         {info.score}
@@ -29,6 +29,7 @@ export const Score:React.FC<PlayerCardProps> = ({info, setInfo})=>{
             }}
             onBlur={()=>setIsAccepted(false)}
             autoFocus
+            placeholder=" 1"
             className="w-[60px] bg-black text-white text-center
               border border-black 
               block mt-3 mx-auto"
