@@ -6,7 +6,7 @@ export type PlayerInfo = {
 export type SetInfoAction = 
   {type:"changeName", value:string}
   |{type:"addScore", value:number}
-  |{type:"incrementScore", value:null}
+  |{type:"incrementScore"}
 
 export type PlayerCardProps = {
   info: PlayerInfo,
