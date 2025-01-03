@@ -28,9 +28,9 @@ export default function Home() {
       <div className="grid grid-cols-20 h-lvh p-10 gap-3 bg-[#f4f1ce]">
         <PlayerCards/>
         <div className="col-span-10 grid grid-rows-10 gap-3">
-          <div className="border-4 border-orange-300 bg-orange-50 row-span-7 rounded-md shadow-2xl relative">
+          <div className="border-4 border-orange-300 bg-orange-50 row-span-7 rounded-md shadow-2xl relative overflow-hidden">
             <p className={`absolute left-1/2 -translate-x-1/2 text-4xl mt-5 ${dotFont.className}`}>レースを進める</p>
-            <RollAction roundNum={roundNum} setRoundResult={setRoundResult}/>
+            <RollAction setRoundResult={setRoundResult}/>
           </div>
           <div className="bg-black row-span-3 rounded-md flex justify-center p-3 relative">
             <p className={`absolute left-1/2 -translate-x-1/2 text-white text-3xl ${dotFont.className}`}>残りのラクダ</p>
