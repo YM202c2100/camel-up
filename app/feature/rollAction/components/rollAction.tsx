@@ -34,7 +34,7 @@ export const RollAction:React.FC<RollActionProps> = ({setRoundResult})=>{
     const canRoll = (camelColors.length - remainingCamels.length < rollLimit)
     if(canRoll){
       const camelResult:CamelColor = getRandomCamel(remainingCamels)
-      const diceResult:DiceValues = rollDice()
+      const diceResult:DiceValues = rollDice(camelResult)
 
       const rollResult = {camel:camelResult, dice:diceResult}
       setRoundResult(prev => [...prev, rollResult])
