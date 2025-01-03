@@ -27,8 +27,6 @@ export const PlayerCards:React.FC = ()=>{
           return {...info, name: action.value}
         case "addScore":
           return {...info, score: info.score+action.value}
-        case "incrementScore":
-          return {...info, score: info.score+1}
       }
     })
   }
