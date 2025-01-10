@@ -16,7 +16,7 @@ export const RollAction:React.FC<RollActionProps> = ({setRoundResult})=>{
 
   return(<>
     <div
-      className="h-full w-full cursor-pointer"
+      className="h-full w-full cursor-pointer relative"
       onClick={advanceRace}
     >
       <Image src={"/SVG/pyramidIcon.svg"}
