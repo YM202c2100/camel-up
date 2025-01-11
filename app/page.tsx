@@ -25,7 +25,7 @@ export default function Home() {
 
   return (
     <RoundResultContext value={roundResult}>
-      <div className="grid grid-cols-20 h-lvh p-10 gap-3 bg-[#f4f1ce]">
+      <div className="grid grid-cols-20 h-lvh p-10 gap-3">
         <PlayerCards/>
         <div className="col-span-10 grid grid-rows-10 gap-3">
           <div className="border-4 border-orange-300 bg-orange-50 row-span-7 rounded-md shadow-2xl relative overflow-hidden">
