@@ -22,6 +22,7 @@ export const RollAction:React.FC<RollActionProps> = ({setRoundResult})=>{
       <Image src={"/SVG/pyramidIcon.svg"}
         alt={"pyramid svg icon"}
         fill style={{objectFit:"contain", transform:"scale(1.3) translateY(20px)"}}
+        priority
       />
     </div>
 
