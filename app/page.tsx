@@ -1,6 +1,6 @@
 "use client"
 
-import { createContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { RollAction } from "./feature/rollAction/components/rollAction";
 import { RollResult } from "@/app/models/rollAction.model";
 import { NextRoundButton } from "./feature/nextRoundButton/components/nextRoundButton";
@@ -8,8 +8,7 @@ import { SelectedCamels } from "./feature/selectedCamels/components/selectedCame
 import { RemainginCamels } from "./feature/remainingCamels/remainingCamels";
 import { PlayerCards } from "./feature/player/components/playerCards";
 import { dotFont } from "./font/font";
-
-export const RoundResultContext = createContext<RollResult[]>([])
+import { RoundResultContext } from "./context/context";
 
 export default function Home() {
   const [roundResult, setRoundResult] = useState<RollResult[]>([])

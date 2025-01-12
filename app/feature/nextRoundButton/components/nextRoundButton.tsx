@@ -1,5 +1,5 @@
 import { rollLimit } from "@/app/config"
-import { RoundResultContext } from "@/app/page"
+import { RoundResultContext } from "@/app/context/context"
 import { diceResultFont } from "@/app/font/font"
 import { Dispatch, SetStateAction, useContext } from "react"
 

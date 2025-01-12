@@ -1,5 +1,5 @@
 import { CamelIcon } from "@/app/components/camelIcon"
-import { RoundResultContext } from "@/app/page"
+import { RoundResultContext } from "@/app/context/context"
 import { diceResultFont, dotFont } from "@/app/font/font"
 import { useContext } from "react"
 import { RollResult } from "@/app/models/rollAction.model"

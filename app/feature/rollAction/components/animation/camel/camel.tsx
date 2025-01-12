@@ -1,7 +1,7 @@
 import { CamelIcon } from "@/app/components/camelIcon"
 import { DiceResult } from "./diceResult"
 import { useContext } from "react"
-import { RoundResultContext } from "@/app/page"
+import { RoundResultContext } from "@/app/context/context"
 
 export const Camel:React.FC = ()=>{
   const rollResult = useContext(RoundResultContext).slice(-1)[0]
