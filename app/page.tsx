@@ -6,12 +6,8 @@ import { RollResult } from "@/app/models/rollAction.model";
 import { NextRoundButton } from "./feature/nextRoundButton/components/nextRoundButton";
 import { SelectedCamels } from "./feature/selectedCamels/components/selectedCamels";
 import { RemainginCamels } from "./feature/remainingCamels/remainingCamels";
-import { DotGothic16 } from "next/font/google";
-import { Ribeye } from "next/font/google";
 import { PlayerCards } from "./feature/player/components/playerCards";
-
-export const dotFont = DotGothic16({subsets:["latin"], weight:["400"]})
-export const diceResultFont = Ribeye({subsets:['latin'], weight:["400"]})
+import { dotFont } from "./font/font";
 
 export const RoundResultContext = createContext<RollResult[]>([])
 

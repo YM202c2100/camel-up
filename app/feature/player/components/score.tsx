@@ -1,5 +1,5 @@
 import { PlayerCardProps } from "@/app/models/playerCards.model";
-import { dotFont } from "@/app/page"
+import { dotFont } from "@/app/font/font";
 import { useState } from "react";
 
 export const Score:React.FC<PlayerCardProps> = ({info, setInfo})=>{
